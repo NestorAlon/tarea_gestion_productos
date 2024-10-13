@@ -71,19 +71,23 @@ def menu():
         print("5: Guardar datos y salir")
 
         opcion = input("Selecciona una opción: ")
+        if opcion.isdecimal():
+            opcion = int(opcion)
 
-        if opcion == '1':
-            añadir_producto()
-        elif opcion == '2':
-            ver_productos()
-        elif opcion == '3':
-            actualizar_producto()
-        elif opcion == '4':
-            eliminar_producto()
-        elif opcion == '5':
-            guardar_datos()
-            break
+            if opcion == 1:
+                añadir_producto()
+            elif opcion == 2:
+                ver_productos()
+            elif opcion == 3:
+                actualizar_producto()
+            elif opcion == 4:
+                eliminar_producto()
+            elif opcion == 5:
+                guardar_datos()
+                break
+            else:
+                print("Por favor, selecciona una opción válida.")
         else:
-            print("Por favor, selecciona una opción válida.")
+            print("Introduzca un numero del 1 al 5")
             
 menu()
