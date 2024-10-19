@@ -6,9 +6,22 @@ def añadir_producto():
     producto = {}
     claves = ["Nombre", "Precio", "Cantidad"]
     
-    for clave in claves:
-        valor = input(f"Introduce el valor para {clave} : ")
-        producto[clave] = valor
+    producto["Nombre"] = input("Ingrese el nombre: ")
+
+    while True:
+        try:
+            producto["Precio"] = float(input("Ingrese el precio: "))
+            break
+        except ValueError:
+            print("Error: Ingrese solamente numeros.")
+    
+    while True:
+        try:
+            producto["Cantidad"] = int(input("Ingrese la cantidad: "))
+            break
+        except ValueError:
+            print("Error: Ingrese solamente numeros enteros.")
+
         
     return productos.append(producto)
 
@@ -21,8 +34,20 @@ def actualizar_producto():
     for producto in productos:
         if producto["Nombre"] == producto_nombre:
             nuevo_nombre = input("Ingresa el nuevo nombre: ")
-            nuevo_precio = input("Ingresa el nuevo precio: ")
-            nueva_cantidad = input("Ingresa la nueva cantidad: ")
+
+            while True:
+                try:
+                    nuevo_precio = float(input("Ingresa el nuevo precio: "))
+                    break
+                except ValueError:
+                    print("Error: Ingrese solamente numeros.")
+            
+            while True:
+                try:
+                    nueva_cantidad = int(input("Ingresa la nueva cantidad: "))
+                    break
+                except ValueError:
+                    print("Error: Ingrese solamente numeros enteros.")
             producto["Nombre"] = nuevo_nombre
             producto["Precio"] = nuevo_precio
             producto["Cantidad"] = nueva_cantidad
