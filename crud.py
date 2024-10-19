@@ -23,7 +23,8 @@ def añadir_producto():
             print("Error: Ingrese solamente numeros enteros.")
 
         
-    return productos.append(producto)
+    productos.append(producto)
+    print("Producto añadido")
 
 def ver_productos():
     print(productos)
